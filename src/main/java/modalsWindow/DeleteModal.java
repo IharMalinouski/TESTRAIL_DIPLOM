@@ -14,7 +14,7 @@ public class DeleteModal extends BaseModal {
         super(driver);
     }
 
-    @Override
+    @Step("Activate checkbox")
     public DeleteModal isModalOpened() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(BUTTON_OK));
         return this;

@@ -30,9 +30,9 @@ public class ProjectPage extends BasePage {
     }
 
     @Step("Click tab TEST CASES")
-    public TestCasePage clickTabTestCases() {
+    public TestSuitePage clickTabTestCases() {
         driver.findElement(TEST_CASES_TAB).click();
-        return new TestCasePage(driver);
+        return new TestSuitePage(driver);
     }
 
 

@@ -2,12 +2,15 @@ package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j2;
+import modalsWindow.AddSectionModal;
 import modalsWindow.DeleteModal;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestContext;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import pages.*;
 import steps.*;
 import utilites.TestListener;
@@ -30,8 +33,9 @@ public class BaseTest {
     ProjectStep projectStep;
     DeleteModal deleteModal;
     ModalStep modalStep;
-    TestCasePage testCasePage;
-    TestCaseStep testCaseStep;
+    TestSuitePage testSuitePage;
+    TestSuiteStep testSuiteStep;
+    AddSectionModal addSectionModal;
 
 
     @BeforeMethod
@@ -65,13 +69,14 @@ public class BaseTest {
         projectsStep = new ProjectsStep(driver);
         deleteModal = new DeleteModal(driver);
         modalStep = new ModalStep(driver);
-        testCasePage = new TestCasePage(driver);
-        testCaseStep = new TestCaseStep(driver) ;
+        testSuitePage = new TestSuitePage(driver);
+        testSuiteStep = new TestSuiteStep(driver);
+        addSectionModal = new AddSectionModal(driver);
     }
 
     @AfterMethod
     public void close() {
-        log.info("Close browser");
+//        log.info("Close browser");
 //        if (driver != null) {
 //            driver.quit();
 //        }

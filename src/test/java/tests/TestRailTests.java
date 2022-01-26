@@ -4,7 +4,6 @@ import io.qameta.allure.Description;
 import lombok.extern.log4j.Log4j2;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import steps.TestCaseStep;
 import utilites.Retry;
 
 @Log4j2
@@ -36,16 +35,16 @@ public class TestRailTests extends BaseTest {
         // Assert.assertEquals(dashboardPage.getNameProject(), "1");
     }
 
-    @Test(description = "Delete project", retryAnalyzer = Retry.class)
-    @Description("Delete project")
-    public void deleteNewProjectTest() {
-        loginStep
-                .authorization();
-        projectsStep
-                .deleteNewProject();
-        modalStep
-                .deleteNewProject();
-    }
+//    @Test(description = "Delete project", retryAnalyzer = Retry.class)
+//    @Description("Delete project")
+//    public void deleteNewProjectTest() {
+//        loginStep
+//                .authorization();
+//        projectsStep
+//                .deleteNewProject();
+//        modalStep
+//                .deleteNewProject();
+//    }
 
     @Test(description = "Open project", retryAnalyzer = Retry.class)
     @Description("Open project")
@@ -64,9 +63,29 @@ public class TestRailTests extends BaseTest {
                 .authorization();
         dashboardStep
                 .openNewProject();
-        testCaseStep
+        testSuiteStep
                 .createTestSuite();
-
+        Assert.assertEquals(testSuitePage.getNameTestSuite(), "Test Suite 1");
     }
 
+
+    @Test(description = "Add section on test suite", retryAnalyzer = Retry.class)
+    @Description("Add section on test suite")
+    public void addSectionOnTestSuiteTest() {
+        loginStep
+                .authorization();
+        dashboardStep
+                .openNewProject();
+        testSuiteStep
+                .createTestSuite();
+        testSuiteStep
+                .addNewSelection();
+        addSectionModal
+                .setNameSection("New section")
+                .setDescriptionSection("New section on test suite")
+                .clickAddTestSuiteButton();
+        //Assert.assertEquals(testSuitePage.getNameSection(), "123");
+
+
+    }
 }

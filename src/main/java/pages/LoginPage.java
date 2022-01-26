@@ -17,32 +17,31 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    @Step("Открытие барузера по ссылке 'BASE_URL'")
+    @Step("Opening a browser via a link 'BASE_URL'")
     public LoginPage openPage() {
         driver.get(System.getenv().getOrDefault("url", PropertyReader.getProperty("url")));
-        //openPage();
         return this;
     }
 
-    @Step("Ожидание загрузки элемента 'LOGIN_BUTTON'")
+    @Step("Waiting for an element to load '{LOGIN_BUTTON}'")
     public LoginPage waitIsAuthorizationPageOpened() {
         waitForElementLocated(LOGIN_BUTTON, 20);
         return this;
     }
 
-    @Step("Input 'email'")
+    @Step("Input '{email}'")
     public LoginPage inputEmail(String email) {
         driver.findElement(EMAIL_INPUT).sendKeys(email);
         return this;
     }
 
-    @Step("Input 'password'")
+    @Step("Input '{password}'")
     public LoginPage inputPassword(String password) {
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         return this;
     }
 
-    @Step("Clic button 'LogIn'")
+    @Step("Click button 'LogIn'")
     public DashboardPage clickLogInBitton(){
         driver.findElement(LOGIN_BUTTON).click();
         return new DashboardPage(driver);

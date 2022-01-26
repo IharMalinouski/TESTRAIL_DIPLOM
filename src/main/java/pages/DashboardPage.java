@@ -20,7 +20,7 @@ public class DashboardPage extends BasePage {
         return this;
     }
 
-    @Step("Открытие формы создания нового проекта по кнопке 'ADD_PROJECT_BUTTON'")
+    @Step("Opening the form for creating a new project by clicking the button 'ADD_PROJECT_BUTTON'")
     public NewProjectPage openPageNewProject(){
         driver.findElement(ADD_PROJECT_BUTTON).click();
         return new NewProjectPage(driver);

@@ -27,7 +27,7 @@ public class ProjectsPage extends BasePage {
         driver.get(System.getenv().getOrDefault("url", PropertyReader.getProperty("url")) + PROJECTS_URI);
         return this;
     }
-    @Step("Ожидание загрузки элемента 'LOGIN_BUTTON'")
+    @Step("Waiting for an element to load '{LOGIN_BUTTON}'")
     public ProjectsPage waitIsProjectsPageOpened() {
         waitForElementLocated(ADD_PROJECT_BUTTON, 20);
         return this;

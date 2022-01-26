@@ -19,27 +19,27 @@ public class NewProjectPage extends BasePage {
         super(driver);
     }
 
-    @Step("Ожидание загрузки элемента 'LOGIN_BUTTON'")
+    @Step("Waiting for an element to load '{LOGIN_BUTTON}'")
     public NewProjectPage waitIsNewProjectPageOpened() {
         waitForElementLocated(ADD_PROJECT_BUTTON, 20);
         return this;
     }
 
-    @Step("Ввод 'name' в поле Name ")
+    @Step("")
     public NewProjectPage setNameProject(String name) {
-        log.info("Ввод текста в поле 'INPUT_NAME':" + name);
+        log.info("Waiting for an element to load '{INPUT_NAME}':" + name);
         driver.findElement(INPUT_NAME).sendKeys(name);
         return this;
     }
 
-    @Step("Ввод 'announcement' в поле Announcement")
+    @Step("Waiting for an element to load")
     public NewProjectPage setAnnouncementOfProject(String Announcement) {
-        log.info("Ввод текста в поле 'ANNOUNCEMENT_NAME':" + Announcement);
+        log.info("Ввод текста в поле '{ANNOUNCEMENT_NAME}':" + Announcement);
         driver.findElement(ANNOUNCEMENT_NAME).sendKeys(Announcement);
         return this;
     }
 
-    @Step("Активация чек-бокса 'Show announcement'")
+    @Step("Activate checkbox 'Show announcement'")
     public NewProjectPage activateCheckBox() {
 
         if (driver.findElement(CHECKBOX_ELEMENT).isSelected()) {
@@ -51,14 +51,14 @@ public class NewProjectPage extends BasePage {
         }
         return this;
     }
-    @Step("Выбор чек-бокса 'radioButton'")
+    @Step("Waiting for an element to load")
     public NewProjectPage chooseRadioButton (String radioButton) {
         log.info("Выбор radio button c наименованием:" + radioButton);
         driver.findElement(By.xpath(String.format(RADIO_BUTTONS, radioButton))).click();
         return this;
     }
 
-    @Step("Добавление нового проекта")
+    @Step("Click button 'Add Project'")
     public ProjectsPage clickAddProjectButton () {
         log.info("Добавление нового проекта");
         driver.findElement(ADD_PROJECT_BUTTON).click();

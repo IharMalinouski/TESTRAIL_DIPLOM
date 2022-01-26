@@ -1,6 +1,7 @@
 package steps;
 
 import lombok.extern.log4j.Log4j2;
+import modalsWindow.DeleteModal;
 import org.openqa.selenium.WebDriver;
 import pages.*;
 
@@ -13,6 +14,8 @@ public class BaseStep {
     CommonPage commonPage;
     ProjectPage projectPage;
     ProjectsPage projectsPage;
+    DeleteModal deleteModal;
+    TestCasePage testCasePage;
 
 
     public BaseStep(WebDriver driver) {
@@ -23,6 +26,8 @@ public class BaseStep {
         commonPage = new CommonPage(driver);
         projectPage = new ProjectPage(driver);
         projectsPage = new ProjectsPage(driver);
+        deleteModal = new DeleteModal(driver);
+        testCasePage = new TestCasePage(driver);
     }
 
 }

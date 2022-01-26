@@ -10,7 +10,7 @@ public class ProjectsStep extends BaseStep {
         super(driver);
     }
 
-    @Step("Открытие нового проекта")
+    @Step("Opening a new project")
     public void openNewProject() {
         projectsPage
                 .openProjectsPage()

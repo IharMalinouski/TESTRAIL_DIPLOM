@@ -4,6 +4,7 @@ import io.qameta.allure.Description;
 import lombok.extern.log4j.Log4j2;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import steps.TestCaseStep;
 import utilites.Retry;
 
 @Log4j2
@@ -25,29 +26,47 @@ public class TestRailTests extends BaseTest {
         Assert.assertEquals(ProjectsPage.getNameProject(), "New project 1");
     }
 
-    @Test(description = "Open new project", retryAnalyzer = Retry.class)
+    @Test(description = "Open new project 'New project 1'", retryAnalyzer = Retry.class)
     @Description("Open new project")
-    public void openNewProject() {
+    public void openNewProjectTest() {
         loginStep
                 .authorization();
         projectsStep
                 .openNewProject();
+        // Assert.assertEquals(dashboardPage.getNameProject(), "1");
     }
 
     @Test(description = "Delete project", retryAnalyzer = Retry.class)
     @Description("Delete project")
-    public void deleteNewProject() {
+    public void deleteNewProjectTest() {
         loginStep
                 .authorization();
         projectsStep
                 .deleteNewProject();
-        deleteModal
-                .isModalOpened()
-                .activateCheckbox()
-                .clickButtonOk();
-
-
+        modalStep
+                .deleteNewProject();
     }
 
+    @Test(description = "Open project", retryAnalyzer = Retry.class)
+    @Description("Open project")
+    public void openNewProjectOnProjectPageTest() {
+        loginStep
+                .authorization();
+        dashboardStep
+                .openNewProject();
+        Assert.assertEquals(projectPage.getNameProject(), "New project 1");
+    }
+
+    @Test(description = "Create test suite", retryAnalyzer = Retry.class)
+    @Description("Create test suite")
+    public void createTestSuiteTest() {
+        loginStep
+                .authorization();
+        dashboardStep
+                .openNewProject();
+        testCaseStep
+                .createTestSuite();
+
+    }
 
 }

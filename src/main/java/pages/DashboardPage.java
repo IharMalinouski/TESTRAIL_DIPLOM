@@ -10,7 +10,8 @@ public class DashboardPage extends BasePage {
 
     public static final By ADMINISTRATOR_ELEMENT = By.id("navigation-admin");
     public static final By ADD_PROJECT_BUTTON = By.id("sidebar-projects-add");
-    
+    public static final String PROJECT_NAME = "//div[contains(@class,'project')]//a[contains(text(), '%s')]";
+
     public DashboardPage(WebDriver driver) {
         super(driver);
     }
@@ -21,8 +22,16 @@ public class DashboardPage extends BasePage {
     }
 
     @Step("Opening the form for creating a new project by clicking the button 'ADD_PROJECT_BUTTON'")
-    public NewProjectPage openPageNewProject(){
+    public NewProjectPage openPageNewProject() {
         driver.findElement(ADD_PROJECT_BUTTON).click();
         return new NewProjectPage(driver);
     }
+
+    @Step("Open project '{name}'")
+    public ProjectPage clickNameProject(String name) {
+        driver.findElement(By.xpath(String.format(PROJECT_NAME, name))).click();
+        return new ProjectPage(driver);
+    }
+
+
 }

@@ -27,11 +27,13 @@ public class ProjectsPage extends BasePage {
         driver.get(System.getenv().getOrDefault("url", PropertyReader.getProperty("url")) + PROJECTS_URI);
         return this;
     }
+
     @Step("Waiting for an element to load '{LOGIN_BUTTON}'")
     public ProjectsPage waitIsProjectsPageOpened() {
         waitForElementLocated(ADD_PROJECT_BUTTON, 20);
         return this;
     }
+
     @Step("Click project '{nameProject}'")
     public ProjectPage openProjectPage(String nameProject){
         driver.findElement(By.xpath(String.format(PROJECTS_NAME, nameProject))).click();
@@ -55,4 +57,5 @@ public class ProjectsPage extends BasePage {
         driver.findElement(By.xpath(String.format(EDIT_ICON, name))).click();
         return new NewProjectPage(driver);
     }
+
 }

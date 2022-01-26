@@ -29,6 +29,9 @@ public class BaseTest {
     ProjectPage projectPage;
     ProjectStep projectStep;
     DeleteModal deleteModal;
+    ModalStep modalStep;
+    TestCasePage testCasePage;
+    TestCaseStep testCaseStep;
 
 
     @BeforeMethod
@@ -61,13 +64,16 @@ public class BaseTest {
         projectStep = new ProjectStep(driver);
         projectsStep = new ProjectsStep(driver);
         deleteModal = new DeleteModal(driver);
+        modalStep = new ModalStep(driver);
+        testCasePage = new TestCasePage(driver);
+        testCaseStep = new TestCaseStep(driver) ;
     }
 
     @AfterMethod
     public void close() {
         log.info("Close browser");
-        if (driver != null) {
-            driver.quit();
-        }
+//        if (driver != null) {
+//            driver.quit();
+//        }
     }
 }

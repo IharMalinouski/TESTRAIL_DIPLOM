@@ -11,7 +11,7 @@ public class TestCaseStep extends BaseStep {
     @Step("Added new test case")
     public void addNewTestCase() {
         testCasePage
-                .setTitle("New test case")
+                .setTitle("Update test case")
                 .setType("Other")
                 .setPriority("Low")
                 .setEstimate("125 hours")

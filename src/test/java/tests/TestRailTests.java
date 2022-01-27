@@ -109,7 +109,7 @@ public class TestRailTests extends BaseTest {
                 .addNewTestCase();
         testCaseStep
                 .editTestCase();
-        Assert.assertEquals(testCasePage.getUpdateTitleTestCase(), "Update test case");
+        Assert.assertEquals(testCasePage.getTitleTestCase(), "Update test case");
 
     }
 }

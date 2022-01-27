@@ -17,7 +17,6 @@ public class TestCasePage extends BasePage {
     public static final By EXPECTED_RESULT_TEXTAREA = By.id("custom_expected_display");
     public static final By ADD_TEST_CASE_BUTTON = By.id("accept");
     public static final String NAME_TITLE_TEST_CASE = "//div[contains(@class,'content-header-title')]";
-    public static final String UPDATE_NAME_TITLE_TEST_CASE = "//div[contains(@class,'markdown')]//p";
     public static final String EDIT_TEST_CASE = "//a[contains(@class,'toolbar-button')]";
 
     public TestCasePage(WebDriver driver) {
@@ -90,11 +89,6 @@ public class TestCasePage extends BasePage {
         return driver.findElement(By.xpath(String.format(NAME_TITLE_TEST_CASE))).getText();
     }
 
-    @Step("Get update text title")
-    public String getUpdateTitleTestCase() {
-        log.info("Get text title");
-        return driver.findElements(By.xpath(String.format(UPDATE_NAME_TITLE_TEST_CASE))).get(0).getText();
-    }
 
     @Step("Click edit test case button")
     public TestCasePage editTestCaseButton() {
@@ -145,4 +139,9 @@ public class TestCasePage extends BasePage {
         driver.findElement(EXPECTED_RESULT_TEXTAREA).sendKeys(expectedResult);
         return this;
     }
+//    @Step("Click add test suite button")
+//    public TestCasePage clickTestCaseLink() {
+//        driver.findElement(By.xpath(String.format(TEST_CASE))).click();
+//        return this;
+//    }
 }

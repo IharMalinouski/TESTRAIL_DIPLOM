@@ -58,17 +58,17 @@ public class TestRailTests extends BaseTest {
         Assert.assertEquals(testSuitePage.getNameTestSuite(), "Test Suite 1");
     }
 
-    @Test(description = "Add section on test suite", retryAnalyzer = Retry.class)
-    @Description("Add section on test suite")
-    public void addSectionTestSuiteTest() {
-        loginStep
-                .authorization();
-        dashboardStep
-                .openNewProject();
-        testSuiteStep
-                .addTestCase();
+//    @Test(description = "Add section on test suite", retryAnalyzer = Retry.class)
+//    @Description("Add section on test suite")
+//    public void addSectionTestSuiteTest() {
+//        loginStep
+//                .authorization();
+//        dashboardStep
+//                .openNewProject();
+//        testSuiteStep
+//                .addTestCase();
    //     Assert.assertEquals(testSuitePage.getNameSection(), "1111111");
-    }
+    //}
 
     @Test(description = "Add test case", retryAnalyzer = Retry.class)
     @Description("Add test case")

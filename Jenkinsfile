@@ -22,7 +22,7 @@ pipeline {
             // s h "mvn clean test"
 
             // To run Maven on a Windows agent, use
-            powershell 'mvn clean test'
+            powershell 'mvn clean -Dbrowser=%BROWSER% test'
          }
 
          post {

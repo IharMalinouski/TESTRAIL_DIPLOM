@@ -17,7 +17,7 @@ public class BaseStep {
     ProjectsPage projectsPage;
     DeleteModal deleteModal;
     TestSuitePage testSuitePage;
-    DashboardStep dashboardStep;
+    //DashboardStep dashboardStep;
     AddSectionModal addSectionModal;
     TestCasePage testCasePage;
    // TestSuiteStep testSuiteStep;

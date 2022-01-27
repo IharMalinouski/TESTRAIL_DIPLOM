@@ -35,16 +35,16 @@ public class TestRailTests extends BaseTest {
         //   Assert.assertEquals(dashboardPage.getNameProject(), "1");
     }
 
-//    @Test(description = "Delete project", retryAnalyzer = Retry.class)
-//    @Description("Delete project")
-//    public void deleteNewProjectTest() {
-//        loginStep
-//                .authorization();
-//        projectsStep
-//                .deleteNewProject();
-//        modalStep
-//                .deleteNewProject();
-//    }
+    @Test(description = "Delete project", retryAnalyzer = Retry.class)
+    @Description("Delete project")
+    public void deleteNewProjectTest() {
+        loginStep
+                .authorization();
+        projectsStep
+                .deleteNewProject();
+        modalStep
+                .deleteNewProject();
+    }
 
     @Test(description = "Open project", retryAnalyzer = Retry.class)
     @Description("Open project")
@@ -106,10 +106,9 @@ public class TestRailTests extends BaseTest {
         testSuiteStep
                 .addNewTestCases();
         testCaseStep
-                .addNewTestCase();
+                .addTestCase();
         testCaseStep
                 .editTestCase();
         Assert.assertEquals(testCasePage.getTitleTestCase(), "Update test case");
-
     }
 }

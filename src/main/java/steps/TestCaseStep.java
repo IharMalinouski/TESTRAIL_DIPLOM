@@ -11,6 +11,21 @@ public class TestCaseStep extends BaseStep {
     @Step("Added new test case")
     public void addNewTestCase() {
         testCasePage
+                .setTitle("New test case")
+                .setType("Other")
+                .setPriority("Low")
+                .setEstimate("125 hours")
+                .setReferences("1")
+                .setAutomationType("None")
+                .setPreconditions("Added new test suite")
+                .setSteps("Add test suite")
+                .setExpectedResult("Added test case")
+                .clickButtonAddTestCase();
+    }
+
+    @Step("Added new test case")
+    public void addTestCase() {
+        testCasePage
                 .setTitle("Update test case")
                 .setType("Other")
                 .setPriority("Low")

@@ -9,10 +9,11 @@ public class DashboardStep extends BaseStep {
         super(driver);
     }
 
-    public void openNewProject() {
+    public DashboardStep openNewProject() {
         dashboardPage
                 .waitIsDashboardPageOpened()
                 .clickNameProject("New project 1");
+        return this;
     }
 
 }

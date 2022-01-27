@@ -10,35 +10,60 @@ public class TestSuiteStep extends BaseStep {
 
     @Step("Create Test Suite")
     public void createTestSuite() {
-
         projectPage
-                .clickTabTestCases();
-        testSuitePage
+                .clickTabTestCases()
                 .waitIsPageOpened()
-                .ClickNewSuiteButton()
-                .setNameProject("Test Suite 1")
-                .setDescription("New test suite")
-                .clickAddTestSuiteButton();
-    }
-
-    @Step("Create Test Suite")
-    public void open() {
-
-        projectPage
-                .clickTabTestCases();
-        testSuitePage
-                .waitIsPageOpened()
-                .ClickNewSuiteButton()
+                .clickNewSuiteButton()
                 .setNameProject("Test Suite 1")
                 .setDescription("New test suite")
                 .clickAddTestSuiteButton();
     }
 
     @Step("Added new section")
-    public void addNewSelection() {
+    public TestSuiteStep addNewSelection() {
         testSuitePage
                 .clickAddSectionButton();
+        return this;
+    }
 
+    @Step("Added new test case")
+    public TestSuiteStep addTestCase() {
+        projectPage
+                .clickTabTestCases()
+                .waitIsPageOpened()
+                .clickNewSuiteButton()
+                .setNameProject("Test Suite 1")
+                .setDescription("New test suite")
+                .clickAddTestSuiteButton();
+        testSuitePage
+                .clickAddSectionButton();
+        addSectionModal
+                .setNameSection("New section")
+                .setDescriptionSection("New section on test suite")
+                .clickAddTestSuiteButton();
+        return this;
+    }
+
+    @Step("Added new test case")
+    public TestSuiteStep addNewTestCase() {
+        testSuitePage
+                .clickAddTestCaseButton();
+        return this;
+
+    }
+
+    @Step("Added new test cases")
+    public TestSuiteStep addNewTestCases() {
+        projectPage
+                .clickTabTestCases()
+                .waitIsPageOpened()
+                .clickNewSuiteButton()
+                .setNameProject("Test Suite 1")
+                .setDescription("New test suite")
+                .clickAddTestSuiteButton();
+        testSuitePage
+                .clickAddTestCaseButton();
+        return this;
 
     }
 

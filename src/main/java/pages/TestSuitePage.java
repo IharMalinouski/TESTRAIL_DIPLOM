@@ -15,8 +15,8 @@ public class TestSuitePage extends BasePage {
     public static final By ADD_TEST_SUITE = By.id("accept");
     public static final String NAME_TEST_SUITE = "//div[contains(@class,'content-header-title')]";
     public static final By ADD_SECTION = By.id("addSectionInline");
-    //  public static final By ADD_TEST_CASE = By.id("accept");
-    public static final By NAME_SECTIONS = By.id("sectionNameAlt-24");
+    public static final By ADD_TEST_CASE = By.id("sidebar-cases-add");
+    public static final By NAME_SECTIONS = By.xpath("//div[contains(@class,'scroll-auto-inner markdown')]//p)");
 
     public TestSuitePage(WebDriver driver) {
         super(driver);
@@ -29,7 +29,7 @@ public class TestSuitePage extends BasePage {
     }
 
     @Step("Click add test suite button")
-    public TestSuitePage ClickNewSuiteButton() {
+    public TestSuitePage clickNewSuiteButton() {
         driver.findElement(RETURN_TO_DASHBOARD_BUTTON).click();
         return this;
     }
@@ -66,6 +66,12 @@ public class TestSuitePage extends BasePage {
         log.info("Click add test section button");
         driver.findElement(ADD_SECTION).click();
         return new AddSectionModal(driver);
+    }
+    @Step("Click add test case button")
+    public TestCasePage clickAddTestCaseButton() {
+        log.info("Click add test case button");
+        driver.findElement(ADD_TEST_CASE).click();
+        return new TestCasePage(driver);
     }
 
     @Step("Get name section")

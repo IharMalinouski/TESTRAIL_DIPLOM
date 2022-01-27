@@ -32,7 +32,7 @@ public class TestRailTests extends BaseTest {
                 .authorization();
         projectsStep
                 .openNewProject();
-        // Assert.assertEquals(dashboardPage.getNameProject(), "1");
+        //   Assert.assertEquals(dashboardPage.getNameProject(), "1");
     }
 
 //    @Test(description = "Delete project", retryAnalyzer = Retry.class)
@@ -68,10 +68,21 @@ public class TestRailTests extends BaseTest {
         Assert.assertEquals(testSuitePage.getNameTestSuite(), "Test Suite 1");
     }
 
-
     @Test(description = "Add section on test suite", retryAnalyzer = Retry.class)
     @Description("Add section on test suite")
-    public void addSectionOnTestSuiteTest() {
+    public void addSectionTestSuiteTest() {
+        loginStep
+                .authorization();
+        dashboardStep
+                .openNewProject();
+        testSuiteStep
+                .addTestCase();
+        // Assert.assertEquals(testSuitePage.getNameSection(), "1111111");
+    }
+
+    @Test(description = "Add test case", retryAnalyzer = Retry.class)
+    @Description("Add test case")
+    public void addTestCaseTest() {
         loginStep
                 .authorization();
         dashboardStep
@@ -79,13 +90,26 @@ public class TestRailTests extends BaseTest {
         testSuiteStep
                 .createTestSuite();
         testSuiteStep
-                .addNewSelection();
-        addSectionModal
-                .setNameSection("New section")
-                .setDescriptionSection("New section on test suite")
-                .clickAddTestSuiteButton();
-        //Assert.assertEquals(testSuitePage.getNameSection(), "123");
+                .addNewTestCase();
+        testCaseStep
+                .addNewTestCase();
+        Assert.assertEquals(testCasePage.getTitleTestCase(), "New test case");
+    }
 
+    @Test(description = "Edit test case", retryAnalyzer = Retry.class)
+    @Description("Add test case")
+    public void editTestCaseTest() {
+        loginStep
+                .authorization();
+        dashboardStep
+                .openNewProject();
+        testSuiteStep
+                .addNewTestCases();
+        testCaseStep
+                .addNewTestCase();
+        testCaseStep
+                .editTestCase();
+        Assert.assertEquals(testCasePage.getUpdateTitleTestCase(), "Update test case");
 
     }
 }

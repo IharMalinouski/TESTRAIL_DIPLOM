@@ -36,6 +36,8 @@ public class BaseTest {
     TestSuitePage testSuitePage;
     TestSuiteStep testSuiteStep;
     AddSectionModal addSectionModal;
+    TestCaseStep testCaseStep;
+    TestCasePage testCasePage;
 
 
     @BeforeMethod
@@ -72,6 +74,9 @@ public class BaseTest {
         testSuitePage = new TestSuitePage(driver);
         testSuiteStep = new TestSuiteStep(driver);
         addSectionModal = new AddSectionModal(driver);
+        testSuiteStep = new TestSuiteStep(driver);
+        testCasePage = new TestCasePage(driver);
+        testCaseStep = new TestCaseStep(driver);
     }
 
     @AfterMethod

@@ -19,6 +19,9 @@ public class BaseStep {
     TestSuitePage testSuitePage;
     DashboardStep dashboardStep;
     AddSectionModal addSectionModal;
+    TestCasePage testCasePage;
+   // TestSuiteStep testSuiteStep;
+  //  ProjectStep projectStep;
 //    LoginStep loginStep;
 //    TestSuiteStep testSuiteStep;
 
@@ -35,6 +38,9 @@ public class BaseStep {
        testSuitePage = new TestSuitePage(driver);
        // dashboardStep = new DashboardStep(driver);
         addSectionModal = new AddSectionModal(driver);
+        testCasePage = new TestCasePage(driver);
+      //  testSuiteStep = new TestSuiteStep(driver);
+      //  projectStep = new ProjectStep(driver);
 //        loginStep = new LoginStep(driver);
 //        testSuiteStep = new TestSuiteStep(driver);
     }

@@ -16,7 +16,7 @@ public class TestSuitePage extends BasePage {
     public static final String NAME_TEST_SUITE = "//div[contains(@class,'content-header-title')]";
     public static final By ADD_SECTION = By.id("addSectionInline");
     public static final By ADD_TEST_CASE = By.id("sidebar-cases-add");
-    public static final By NAME_SECTIONS = By.xpath("//div[contains(@class,'scroll-auto-inner markdown')]/p");
+     public static final By NAME_SECTIONS = By.xpath("//div[contains(@class,'scroll-auto-inner markdown')]/p");
 
     public TestSuitePage(WebDriver driver) {
         super(driver);

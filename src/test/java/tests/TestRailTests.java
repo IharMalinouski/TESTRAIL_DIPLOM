@@ -67,7 +67,7 @@ public class TestRailTests extends BaseTest {
                 .openNewProject();
         testSuiteStep
                 .addTestCase();
-   //    Assert.assertEquals(testSuitePage.getNameSection(), "1111111");
+   //     Assert.assertEquals(testSuitePage.getNameSection(), "1111111");
     }
 
     @Test(description = "Add test case", retryAnalyzer = Retry.class)

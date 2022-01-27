@@ -17,14 +17,8 @@ public class BaseStep {
     ProjectsPage projectsPage;
     DeleteModal deleteModal;
     TestSuitePage testSuitePage;
-    //DashboardStep dashboardStep;
     AddSectionModal addSectionModal;
     TestCasePage testCasePage;
-   // TestSuiteStep testSuiteStep;
-  //  ProjectStep projectStep;
-//    LoginStep loginStep;
-//    TestSuiteStep testSuiteStep;
-
 
     public BaseStep(WebDriver driver) {
         loginPage = new LoginPage(driver);
@@ -35,14 +29,8 @@ public class BaseStep {
         projectPage = new ProjectPage(driver);
         projectsPage = new ProjectsPage(driver);
         deleteModal = new DeleteModal(driver);
-       testSuitePage = new TestSuitePage(driver);
-       // dashboardStep = new DashboardStep(driver);
+        testSuitePage = new TestSuitePage(driver);
         addSectionModal = new AddSectionModal(driver);
         testCasePage = new TestCasePage(driver);
-      //  testSuiteStep = new TestSuiteStep(driver);
-      //  projectStep = new ProjectStep(driver);
-//        loginStep = new LoginStep(driver);
-//        testSuiteStep = new TestSuiteStep(driver);
     }
-
 }

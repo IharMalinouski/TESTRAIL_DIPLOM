@@ -15,5 +15,4 @@ public class DashboardStep extends BaseStep {
                 .clickNameProject("New project 1");
         return this;
     }
-
 }

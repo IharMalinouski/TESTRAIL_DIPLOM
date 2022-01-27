@@ -89,7 +89,6 @@ public class TestCasePage extends BasePage {
         return driver.findElement(By.xpath(String.format(NAME_TITLE_TEST_CASE))).getText();
     }
 
-
     @Step("Click edit test case button")
     public TestCasePage editTestCaseButton() {
         log.info("Click edit test case button");
@@ -139,9 +138,4 @@ public class TestCasePage extends BasePage {
         driver.findElement(EXPECTED_RESULT_TEXTAREA).sendKeys(expectedResult);
         return this;
     }
-//    @Step("Click add test suite button")
-//    public TestCasePage clickTestCaseLink() {
-//        driver.findElement(By.xpath(String.format(TEST_CASE))).click();
-//        return this;
-//    }
 }

@@ -32,6 +32,4 @@ public class DashboardPage extends BasePage {
         driver.findElement(By.xpath(String.format(PROJECT_NAME, name))).click();
         return new ProjectPage(driver);
     }
-
-
 }

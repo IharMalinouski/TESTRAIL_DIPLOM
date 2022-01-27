@@ -17,5 +17,4 @@ public class ModalStep extends BaseStep {
                 .activateCheckbox()
                 .clickButtonOk();
     }
-
 }

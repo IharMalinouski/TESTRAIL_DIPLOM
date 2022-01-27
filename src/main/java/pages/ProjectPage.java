@@ -35,19 +35,15 @@ public class ProjectPage extends BasePage {
         return new TestSuitePage(driver);
     }
 
+    @Step("Click tab TEST RUNS")
+    public TestCasePage clickTabTestRuns() {
+        driver.findElement(TEST_RUNS_TAB).click();
+        return new TestCasePage(driver);
+    }
 
-//
-//    @Step("Click tab TEST RUNS")
-//    public TestCasesPage clickTabTestRuns() {
-//        driver.findElement(TEST_RUNS_TAB).click();
-//        return new TestCasesPage(driver);
-//    }
-//
-//    public DashboardPage returnToDashboardPage() {
-//        driver.findElement(DASHBOARD_TAB).click();
-//        return new DashboardPage(driver);
-//    }
-//}
-
-
+    public DashboardPage returnToDashboardPage() {
+        driver.findElement(DASHBOARD_TAB).click();
+        return new DashboardPage(driver);
+    }
 }
+

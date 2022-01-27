@@ -17,5 +17,4 @@ public class LoginStep extends BaseStep {
                 .clickLogInBitton()
                 .waitIsDashboardPageOpened();
     }
-
 }

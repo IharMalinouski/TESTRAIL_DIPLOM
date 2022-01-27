@@ -25,16 +25,6 @@ public class TestRailTests extends BaseTest {
         Assert.assertEquals(ProjectsPage.getNameProject(), "New project 1");
     }
 
-    @Test(description = "Open new project 'New project 1'", retryAnalyzer = Retry.class)
-    @Description("Open new project")
-    public void openNewProjectTest() {
-        loginStep
-                .authorization();
-        projectsStep
-                .openNewProject();
-        //   Assert.assertEquals(dashboardPage.getNameProject(), "1");
-    }
-
     @Test(description = "Delete project", retryAnalyzer = Retry.class)
     @Description("Delete project")
     public void deleteNewProjectTest() {
@@ -77,7 +67,7 @@ public class TestRailTests extends BaseTest {
                 .openNewProject();
         testSuiteStep
                 .addTestCase();
-        // Assert.assertEquals(testSuitePage.getNameSection(), "1111111");
+        Assert.assertEquals(testSuitePage.getNameSection(), "1111111");
     }
 
     @Test(description = "Add test case", retryAnalyzer = Retry.class)

@@ -43,11 +43,4 @@ public class AddSectionModal extends BaseModal {
         driver.findElement(ADD_SECTION_BUTTON).click();
         return new TestSuitePage(driver);
     }
-
-//    @Step("Get name test suite")
-//    public String getNameTestSuite() {
-//        log.info("Get name test suite");
-//        return driver.findElement(By.xpath(String.format(NAME_TEST_SUITE))).getText();
-//    }
-
 }

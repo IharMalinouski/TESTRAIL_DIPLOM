@@ -35,13 +35,13 @@ public class ProjectsPage extends BasePage {
     }
 
     @Step("Click project '{nameProject}'")
-    public ProjectPage openProjectPage(String nameProject){
+    public ProjectPage openProjectPage(String nameProject) {
         driver.findElement(By.xpath(String.format(PROJECTS_NAME, nameProject))).click();
         return new ProjectPage(driver);
     }
 
     @Step("Click return dashboard")
-    public DashboardPage clickDasboardTab(){
+    public DashboardPage clickDasboardTab() {
         driver.findElement(RETURN_DASHBOARD).click();
         return new DashboardPage(driver);
     }
@@ -57,5 +57,4 @@ public class ProjectsPage extends BasePage {
         driver.findElement(By.xpath(String.format(EDIT_ICON, name))).click();
         return new NewProjectPage(driver);
     }
-
 }

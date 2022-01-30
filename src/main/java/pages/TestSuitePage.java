@@ -2,7 +2,7 @@ package pages;
 
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
-import modalsWindow.AddSectionModal;
+import modals_window.AddSectionModal;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -42,9 +42,9 @@ public class TestSuitePage extends BasePage {
     }
 
     @Step("Set '{Description}' into field Description")
-    public TestSuitePage setDescription(String Description) {
-        log.info("Set '{Description}': " + Description);
-        driver.findElement(DESCRIPTION_FIELD).sendKeys(Description);
+    public TestSuitePage setDescription(String description) {
+        log.info("Set '{Description}': " + description);
+        driver.findElement(DESCRIPTION_FIELD).sendKeys(description);
         return this;
     }
 

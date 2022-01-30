@@ -13,7 +13,7 @@ public class ModalStep extends BaseStep {
     @Step("Delete project")
     public void deleteNewProject() {
         deleteModal
-                .isModalOpened()
+                .waitForModalOpened()
                 .activateCheckbox()
                 .clickButtonOk();
     }

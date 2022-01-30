@@ -2,8 +2,8 @@ package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j2;
-import modalsWindow.AddSectionModal;
-import modalsWindow.DeleteModal;
+import modals_window.AddSectionModal;
+import modals_window.DeleteModal;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -39,9 +39,7 @@ public class BaseTest {
     TestCaseStep testCaseStep;
     TestCasePage testCasePage;
 
-
-    @BeforeMethod
-    public void initTest(ITestContext context) {
+    public void initBrowser() {
         if (System.getProperty("browser") != null) {
             if (System.getProperty("browser").equals("chrome")) {
                 WebDriverManager.chromedriver().setup();
@@ -55,9 +53,9 @@ public class BaseTest {
             driver = new ChromeDriver();
         }
         log.debug("Browser is started in fullscreen mode.");
-        driver.manage().window().maximize();
-        String driverVariable = "driver";
-        context.setAttribute(driverVariable, driver);
+    }
+
+    public void initPages() {
         loginPage = new LoginPage(driver);
         loginStep = new LoginStep(driver);
         dashboardPage = new DashboardPage(driver);
@@ -77,6 +75,15 @@ public class BaseTest {
         testSuiteStep = new TestSuiteStep(driver);
         testCasePage = new TestCasePage(driver);
         testCaseStep = new TestCaseStep(driver);
+    }
+
+    @BeforeMethod
+    public void initTest(ITestContext context) {
+        initBrowser();
+        driver.manage().window().maximize();
+        String driverVariable = "driver";
+        context.setAttribute(driverVariable, driver);
+        initPages();
     }
 
     @AfterMethod

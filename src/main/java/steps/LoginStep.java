@@ -8,12 +8,12 @@ public class LoginStep extends BaseStep {
         super(driver);
     }
 
-    public void authorization() {
+    public void authorization(String email, String password) {
         loginPage
                 .openPage()
                 .waitIsAuthorizationPageOpened()
-                .inputEmail(System.getenv().getOrDefault("email", PropertyReader.getProperty("email")))
-                .inputPassword(System.getenv().getOrDefault("password", PropertyReader.getProperty("password")))
+                .inputEmail(email)
+                .inputPassword(password)
                 .clickLogInBitton()
                 .waitIsDashboardPageOpened();
     }

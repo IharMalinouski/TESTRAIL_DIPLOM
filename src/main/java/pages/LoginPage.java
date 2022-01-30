@@ -4,7 +4,6 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilites.PropertyReader;
 
 @Log4j2
 public class LoginPage extends BasePage {
@@ -17,9 +16,14 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    @Step("Opening a browser via a link 'BASE_URL'")
+    //    @Step("Opening a browser via a link 'BASE_URL'")
+//    public LoginPage openPage() {
+//        driver.get(System.getenv().getOrDefault("url", PropertyReader.getProperty("url")));
+//        return this;
+//    }
+    @Step("Opening page")
     public LoginPage openPage() {
-        driver.get(System.getenv().getOrDefault("url", PropertyReader.getProperty("url")));
+        openPage(BASE_URL);
         return this;
     }
 
@@ -42,7 +46,7 @@ public class LoginPage extends BasePage {
     }
 
     @Step("Click button 'LogIn'")
-    public DashboardPage clickLogInBitton(){
+    public DashboardPage clickLogInBitton() {
         driver.findElement(LOGIN_BUTTON).click();
         return new DashboardPage(driver);
     }

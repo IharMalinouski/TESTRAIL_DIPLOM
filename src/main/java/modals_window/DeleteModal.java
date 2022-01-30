@@ -1,4 +1,4 @@
-package modalsWindow;
+package modals_window;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -15,8 +15,8 @@ public class DeleteModal extends BaseModal {
     }
 
     @Step("Activate checkbox")
-    public DeleteModal isModalOpened() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(BUTTON_OK));
+    public DeleteModal waitForModalOpened() {
+        waitForElementLocated(BUTTON_OK, 20);
         return this;
     }
 

@@ -14,7 +14,6 @@ public class NewProjectPage extends BasePage {
     public static final By CHECKBOX_ELEMENT = By.id("show_announcement");
     public static final String RADIO_BUTTONS = "//div[contains(@class,'add-project-row')]//descendant::strong[contains(text(),'%s')]";
 
-
     public NewProjectPage(WebDriver driver) {
         super(driver);
     }
@@ -41,7 +40,6 @@ public class NewProjectPage extends BasePage {
 
     @Step("Activate checkbox 'Show announcement'")
     public NewProjectPage activateCheckBox() {
-
         if (driver.findElement(CHECKBOX_ELEMENT).isSelected()) {
             log.info("Click on checkbox");
             driver.findElement(CHECKBOX_ELEMENT).click();

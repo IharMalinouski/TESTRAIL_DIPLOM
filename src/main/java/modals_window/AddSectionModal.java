@@ -1,4 +1,4 @@
-package modalsWindow;
+package modals_window;
 
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
@@ -18,22 +18,22 @@ public class AddSectionModal extends BaseModal {
         super(driver);
     }
 
-    public AddSectionModal isModalOpened() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ADD_SECTION_BUTTON));
+    public AddSectionModal waitForModalOpened() {
+        waitForElementLocated(ADD_SECTION_BUTTON, 20);
         return this;
     }
 
-    @Step("Set '{name}' into field Name")
-    public AddSectionModal setNameSection(String name) {
-        log.info("Set '{name}': " + name);
-        driver.findElement(NAME_FIELD).sendKeys(name);
+    @Step("Set '{nameModal}' into field Name")
+    public AddSectionModal setNameSection(String nameModal) {
+        log.info("Set '{nameModal}': " + nameModal);
+        driver.findElement(NAME_FIELD).sendKeys(nameModal);
         return this;
     }
 
-    @Step("Set '{Description}' into field Description")
-    public AddSectionModal setDescriptionSection(String Description) {
-        log.info("Set '{Description}': " + Description);
-        driver.findElement(DESCRIPTION_FIELD).sendKeys(Description);
+    @Step("Set '{descriptionModal}' into field descriptionModal")
+    public AddSectionModal setDescriptionSection(String descriptionModal) {
+        log.info("Set '{descriptionModal}': " + descriptionModal);
+        driver.findElement(DESCRIPTION_FIELD).sendKeys(descriptionModal);
         return this;
     }
 

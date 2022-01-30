@@ -13,7 +13,7 @@ public class CommonPage extends BasePage{
     public static final By LOGOUT_USER = By.id("navigation-user-logout");
 
     @Step("opening dropdown list LOGOUT ")
-    public CommonPage openDropDawnLogout(){
+    public CommonPage openDropDownLogout(){
         driver.findElement(NAVIGATOR_USER).click();
         return this;
     }

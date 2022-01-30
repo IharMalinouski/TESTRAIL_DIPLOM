@@ -13,16 +13,16 @@ public class ProjectsStep extends BaseStep {
     @Step("Opening a new project")
     public void openNewProject() {
         projectsPage
-                .openProjectsPage()
+                .openPage()
                 .waitIsProjectsPageOpened()
                 .clickDasboardTab();
     }
 
     @Step("Delete project")
-    public void deleteNewProject() {
+    public void deleteNewProject(String nameProject) {
         projectsPage
-                .openProjectsPage()
+                .openPage()
                 .waitIsProjectsPageOpened()
-                .clickDelete("New project 1");
+                .clickDelete(nameProject);
     }
 }

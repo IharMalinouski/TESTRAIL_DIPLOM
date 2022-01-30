@@ -1,8 +1,8 @@
 package steps;
 
 import lombok.extern.log4j.Log4j2;
-import modalsWindow.AddSectionModal;
-import modalsWindow.DeleteModal;
+import modals_window.AddSectionModal;
+import modals_window.DeleteModal;
 import org.openqa.selenium.WebDriver;
 import pages.*;
 

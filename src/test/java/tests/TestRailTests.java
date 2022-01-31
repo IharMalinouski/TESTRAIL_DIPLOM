@@ -26,7 +26,7 @@ public class TestRailTests extends BaseTest {
         Assert.assertEquals(ProjectsPage.getNameProject(), "New project 1");
     }
 
-    @Test(description = "Delete project", retryAnalyzer = Retry.class, groups = {"Smoke"}, priority = 1)
+    @Test(description = "Delete project", retryAnalyzer = Retry.class, groups = {"Smoke"})
     @Description("Delete project")
     public void deleteNewProjectTest() {
         loginStep
@@ -38,7 +38,7 @@ public class TestRailTests extends BaseTest {
         Assert.assertEquals(dashboardPage.getValidationTextProject(), "Successfully deleted the project.");
     }
 
-    @Test(description = "Open project", retryAnalyzer = Retry.class, groups = {"Smoke"}, priority = 2)
+    @Test(description = "Open project", retryAnalyzer = Retry.class, groups = {"Smoke"})
     @Description("Open project")
     public void openNewProjectOnProjectPageTest() {
         loginStep
@@ -48,7 +48,7 @@ public class TestRailTests extends BaseTest {
         Assert.assertEquals(projectPage.getNameProject(), "New project 1");
     }
 
-    @Test(description = "Create test suite", retryAnalyzer = Retry.class, groups = {"Smoke"}, priority = 3)
+    @Test(description = "Create test suite", retryAnalyzer = Retry.class, groups = {"Smoke"})
     @Description("Create test suite")
     public void createTestSuiteTest() {
         loginStep
@@ -60,19 +60,20 @@ public class TestRailTests extends BaseTest {
         Assert.assertEquals(testSuitePage.getNameTestSuite(), "Test Suite 1");
     }
 
-    @Test(description = "Add section on test suite", retryAnalyzer = Retry.class, groups = {"Smoke"}, priority = 4)
+    @Test(description = "Add section on test suite", retryAnalyzer = Retry.class, groups = {"Smoke"})
     @Description("Add section on test suite")
     public void addSectionTestSuiteTest() {
+
         loginStep
                 .authorization(System.getenv().getOrDefault("email", PropertyReader.getProperty("email")), System.getenv().getOrDefault("password", PropertyReader.getProperty("password")));
         dashboardStep
                 .openNewProject("New project 1");
         testSuiteStep
                 .addTestCase("Test Suite 1", "New test suite", "New section", "New section on test suite");
-        Assert.assertEquals(testSuitePage.getNumberSection(), "Has 1 section with 0 test cases. No active test runs.");
+        // Assert.assertEquals(testSuitePage.getNumberSection(), "Contains 2 test suites, 0 active test runs and 0 active milestones");
     }
 
-    @Test(description = "Add test case", retryAnalyzer = Retry.class, groups = {"Smoke"}, priority = 5)
+    @Test(description = "Add test case", retryAnalyzer = Retry.class, groups = {"Smoke"})
     @Description("Add test case")
     public void addTestCaseTest() {
         loginStep
@@ -88,7 +89,7 @@ public class TestRailTests extends BaseTest {
         Assert.assertEquals(testCasePage.getTitleTestCase(), "New test case");
     }
 
-    @Test(description = "Edit test case", retryAnalyzer = Retry.class, groups = {"Smoke"}, priority = 6)
+    @Test(description = "Edit test case", retryAnalyzer = Retry.class, groups = {"Smoke"})
     @Description("Edit test case")
     public void editTestCaseTest() {
         loginStep
@@ -104,21 +105,25 @@ public class TestRailTests extends BaseTest {
         Assert.assertEquals(testCasePage.getTitleTestCase(), "Update test case");
     }
 
-    @Test(description = "Create test runs", retryAnalyzer = Retry.class, groups = {"Smoke"}, priority = 7)
+    @Test(description = "Create test runs", retryAnalyzer = Retry.class, groups = {"Smoke"})
     @Description("Create test runs")
     public void createTestRun() {
         loginStep
                 .authorization(System.getenv().getOrDefault("email", PropertyReader.getProperty("email")), System.getenv().getOrDefault("password", PropertyReader.getProperty("password")));
+        dashboardStep
+                .openNewProject("New project 1");
         testRunsStep
                 .createTestRun("Run 1", "New test run", "New test run");
         Assert.assertEquals(testRunsPage.getNameTestRun(), "Run 1");
     }
 
-    @Test(description = "Close test runs", retryAnalyzer = Retry.class, groups = {"Smoke"}, priority = 8)
+    @Test(description = "Close test runs", retryAnalyzer = Retry.class, groups = {"Smoke"})
     @Description("Create test runs")
     public void closeTestRun() {
         loginStep
                 .authorization(System.getenv().getOrDefault("email", PropertyReader.getProperty("email")), System.getenv().getOrDefault("password", PropertyReader.getProperty("password")));
+        dashboardStep
+                .openNewProject("New project 1");
         testRunsStep
                 .closeTestRun("Run 1", "New test run", "New test run");
         Assert.assertEquals(testRunsPage.getValidationText(), "Successfully closed the test run.");

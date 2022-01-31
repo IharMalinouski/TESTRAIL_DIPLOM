@@ -49,15 +49,16 @@ public class NewProjectPage extends BasePage {
         }
         return this;
     }
+
     @Step("Waiting for an element to load")
-    public NewProjectPage chooseRadioButton (String radioButton) {
+    public NewProjectPage chooseRadioButton(String radioButton) {
         log.info("Selecting a radio button with a name:" + radioButton);
         driver.findElement(By.xpath(String.format(RADIO_BUTTONS, radioButton))).click();
         return this;
     }
 
     @Step("Click button 'Add Project'")
-    public ProjectsPage clickAddProjectButton () {
+    public ProjectsPage clickAddProjectButton() {
         log.info("Added a new project");
         driver.findElement(ADD_PROJECT_BUTTON).click();
         return new ProjectsPage(driver);

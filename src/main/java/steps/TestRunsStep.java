@@ -13,7 +13,7 @@ public class TestRunsStep extends BaseStep {
     @Step("Create test run")
     public void createTestRun(String nameRun, String runReferences, String runDescription) {
         testRunsPage
-                .openPage()
+                .clickSuiteTab()
                 .waitIsPageOpened()
                 .clickNewSuiteButton();
         addTestRunsModal
@@ -26,10 +26,10 @@ public class TestRunsStep extends BaseStep {
                 .addTestRunButton();
     }
 
-    @Step("Closr test run")
+    @Step("Close test run")
     public void closeTestRun(String nameRun, String runReferences, String runDescription) {
         testRunsPage
-                .openPage()
+                .clickSuiteTab()
                 .waitIsPageOpened()
                 .clickNewSuiteButton();
         addTestRunsModal

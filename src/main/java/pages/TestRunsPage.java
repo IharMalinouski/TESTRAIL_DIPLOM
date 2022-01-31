@@ -8,12 +8,12 @@ import org.openqa.selenium.WebDriver;
 @Log4j2
 public class TestRunsPage extends BasePage {
 
-    public static final String TEST_RUNS_PROJECTS_URI = "index.php?/runs/overview/105";
     public static final By ADD_TEST_RUNS_BUTTON = By.id("navigation-runs-add");
     public static final By TEST_RUNS_NAME_INPUT = By.id("name");
     public static final By TEST_RUNS_REFERENCES_INPUT = By.id("refs");
     public static final By DESCRIPTION_TEXTAREA = By.id("description_display");
     public static final By ADD_TEST_RUN_BUTTON = By.id("accept");
+    public static final By OPEN_SUITE_TAB = By.id("navigation-runs");
     public static final String GET_NAME_TEST_RUN = "//div[contains(@class,'content-header-title')]";
     public static final String CLOSE_RUN_BUTTON = "//div[contains(@class,'icon-close')]";
     public static final String OK_CLOSE_BUTTON = "//div[contains(@class,'button-group dialog-buttons-highlighted')]//a[contains(text(), 'Yes')]";
@@ -23,21 +23,22 @@ public class TestRunsPage extends BasePage {
         super(driver);
     }
 
-    @Step("Opening page")
-    public TestRunsPage openPage() {
-        openPage(BASE_URL + TEST_RUNS_PROJECTS_URI);
-        return this;
-    }
-
     @Step("Waiting for an element to load 'ADD_TEST_RUNS_BUTTON'")
     public TestRunsPage waitIsPageOpened() {
-        waitForElementLocated(TEST_RUNS_NAME_INPUT, 20);
+        waitForElementLocated(ADD_TEST_RUNS_BUTTON, 20);
         return this;
     }
 
     @Step("Click create test runs button")
     public TestRunsPage clickNewSuiteButton() {
         driver.findElement(ADD_TEST_RUNS_BUTTON).click();
+        return this;
+    }
+
+
+    @Step("Click create test runs button")
+    public TestRunsPage clickSuiteTab() {
+        driver.findElement(OPEN_SUITE_TAB).click();
         return this;
     }
 
@@ -89,11 +90,11 @@ public class TestRunsPage extends BasePage {
         return this;
     }
 
-        @Step("Get validation message text")
-        public String getValidationText() {
-            log.info("Get validation message text");
-            return driver.findElement(By.xpath(String.format(ERROR_MESSAGE))).getText();
-        }
+    @Step("Get validation message text")
+    public String getValidationText() {
+        log.info("Get validation message text");
+        return driver.findElement(By.xpath(String.format(ERROR_MESSAGE))).getText();
+    }
 
     @Step("Waiting for an element to load validation text")
     public TestRunsPage waitIsValidationTextOpened() {

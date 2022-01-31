@@ -18,7 +18,7 @@ public class DashboardPage extends BasePage {
     }
 
     public DashboardPage waitIsDashboardPageOpened() {
-        waitForElementLocated(ADMINISTRATOR_ELEMENT, 20);
+        waitForElementLocated((ADMINISTRATOR_ELEMENT), 20);
         return this;
     }
 

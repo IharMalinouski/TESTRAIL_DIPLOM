@@ -3,6 +3,7 @@ package tests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j2;
 import modals_window.AddSectionModal;
+import modals_window.AddTestRunsModal;
 import modals_window.DeleteModal;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -38,6 +39,9 @@ public class BaseTest {
     AddSectionModal addSectionModal;
     TestCaseStep testCaseStep;
     TestCasePage testCasePage;
+    TestRunsPage testRunsPage;
+    TestRunsStep testRunsStep;
+    AddTestRunsModal addTestRunsModal;
 
     public void initBrowser() {
         if (System.getProperty("browser") != null) {
@@ -75,6 +79,9 @@ public class BaseTest {
         testSuiteStep = new TestSuiteStep(driver);
         testCasePage = new TestCasePage(driver);
         testCaseStep = new TestCaseStep(driver);
+        testRunsPage = new TestRunsPage(driver);
+        testRunsStep = new TestRunsStep(driver);
+        addTestRunsModal = new AddTestRunsModal(driver);
     }
 
     @BeforeMethod

@@ -27,7 +27,7 @@ public class TestSuiteStep extends BaseStep {
     }
 
     @Step("Added new test case")
-    public TestSuiteStep addTestCase(String name, String description, String nameModal,String descriptionModal) {
+    public TestSuiteStep addTestCase(String name, String description, String nameModal, String descriptionModal) {
         projectPage
                 .clickTabTestCases()
                 .waitIsPageOpened()
@@ -42,6 +42,8 @@ public class TestSuiteStep extends BaseStep {
                 .setNameSection(nameModal)
                 .setDescriptionSection(descriptionModal)
                 .clickAddTestSuiteButton();
+        testSuitePage
+                .openPage();
         return this;
     }
 
@@ -50,7 +52,6 @@ public class TestSuiteStep extends BaseStep {
         testSuitePage
                 .clickAddTestCaseButton();
         return this;
-
     }
 
     @Step("Added new test cases")
@@ -65,6 +66,5 @@ public class TestSuiteStep extends BaseStep {
         testSuitePage
                 .clickAddTestCaseButton();
         return this;
-
     }
 }

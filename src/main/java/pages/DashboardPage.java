@@ -11,6 +11,7 @@ public class DashboardPage extends BasePage {
     public static final By ADMINISTRATOR_ELEMENT = By.id("navigation-admin");
     public static final By ADD_PROJECT_BUTTON = By.id("sidebar-projects-add");
     public static final String PROJECT_NAME = "//div[contains(@class,'project')]//a[contains(text(), '%s')]";
+    public static final String VALIDATION_TEXT_DELETE_PROJECT = "//div[contains(@class, 'message-success')]";
 
     public DashboardPage(WebDriver driver) {
         super(driver);
@@ -31,5 +32,16 @@ public class DashboardPage extends BasePage {
     public ProjectPage clickNameProject(String name) {
         driver.findElement(By.xpath(String.format(PROJECT_NAME, name))).click();
         return new ProjectPage(driver);
+    }
+
+    @Step("Get validation message text")
+    public String getValidationTextProject() {
+        log.info("Get validation message text");
+        return driver.findElement(By.xpath(String.format(VALIDATION_TEXT_DELETE_PROJECT))).getText();
+    }
+
+    public DashboardPage waitIsValidationText() {
+        waitForElementLocated((By.xpath(String.format(VALIDATION_TEXT_DELETE_PROJECT))), 20);
+        return this;
     }
 }

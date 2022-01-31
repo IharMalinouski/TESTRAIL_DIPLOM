@@ -9,7 +9,7 @@ public class TestCaseStep extends BaseStep {
     }
 
     @Step("Added new test case")
-    public void addNewTestCase(String name, String type, String priority, String estimate, String references,String automationType,String preconditions, String steps, String expectedResult) {
+    public void addNewTestCase(String name, String type, String priority, String estimate, String references, String automationType, String preconditions, String steps, String expectedResult) {
         testCasePage
                 .setTitle(name)
                 .setType(type)
@@ -24,7 +24,7 @@ public class TestCaseStep extends BaseStep {
     }
 
     @Step("Added new test case")
-    public void addTestCase(String name, String type, String priority, String estimate, String references,String automationType,String preconditions, String steps, String expectedResult) {
+    public void addTestCase(String name, String type, String priority, String estimate, String references, String automationType, String preconditions, String steps, String expectedResult) {
         testCasePage
                 .setTitle(name)
                 .setType(type)
@@ -39,7 +39,7 @@ public class TestCaseStep extends BaseStep {
     }
 
     @Step("Added edit test case")
-    public void editTestCase(String name,String estimate,String references,String preconditions,String steps,String expectedResult ) {
+    public void editTestCase(String name, String estimate, String references, String preconditions, String steps, String expectedResult) {
         testCasePage
                 .editTestCaseButton()
                 .setUpdateTitle(name)

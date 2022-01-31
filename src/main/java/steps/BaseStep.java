@@ -2,6 +2,7 @@ package steps;
 
 import lombok.extern.log4j.Log4j2;
 import modals_window.AddSectionModal;
+import modals_window.AddTestRunsModal;
 import modals_window.DeleteModal;
 import org.openqa.selenium.WebDriver;
 import pages.*;
@@ -19,6 +20,8 @@ public class BaseStep {
     TestSuitePage testSuitePage;
     AddSectionModal addSectionModal;
     TestCasePage testCasePage;
+    TestRunsPage testRunsPage;
+    AddTestRunsModal addTestRunsModal;
 
     public BaseStep(WebDriver driver) {
         loginPage = new LoginPage(driver);
@@ -32,5 +35,7 @@ public class BaseStep {
         testSuitePage = new TestSuitePage(driver);
         addSectionModal = new AddSectionModal(driver);
         testCasePage = new TestCasePage(driver);
+        testRunsPage = new TestRunsPage(driver);
+        addTestRunsModal = new AddTestRunsModal(driver);
     }
 }

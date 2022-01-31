@@ -96,7 +96,6 @@ public class TestCasePage extends BasePage {
         return this;
     }
 
-
     @Step("Set '{name}' into field Title")
     public TestCasePage setUpdateTitle(String name) {
         driver.findElement(TITLE_INPUT).clear();

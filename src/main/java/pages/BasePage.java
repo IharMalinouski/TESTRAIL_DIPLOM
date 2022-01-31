@@ -17,7 +17,6 @@ public abstract class BasePage {
         this.driver = driver;
     }
 
-
     public void waitForElementLocated(By element, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         log.debug("Waiter timeout is: " + timeout + " for element: " + element);

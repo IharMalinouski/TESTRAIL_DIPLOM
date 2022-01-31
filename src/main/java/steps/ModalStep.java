@@ -16,5 +16,7 @@ public class ModalStep extends BaseStep {
                 .waitForModalOpened()
                 .activateCheckbox()
                 .clickButtonOk();
+        dashboardPage
+                .waitIsValidationText();
     }
 }

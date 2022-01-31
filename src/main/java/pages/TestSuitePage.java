@@ -16,7 +16,10 @@ public class TestSuitePage extends BasePage {
     public static final String NAME_TEST_SUITE = "//div[contains(@class,'content-header-title')]";
     public static final By ADD_SECTION = By.id("addSectionInline");
     public static final By ADD_TEST_CASE = By.id("sidebar-cases-add");
-     public static final By NAME_SECTIONS = By.xpath("//div[contains(@class,'scroll-auto-inner markdown')]/p");
+    public static final String EDIT_TEST_CASE = "//div[contains(@class, 'summary-description')]";
+    public static final String TEST_SUITES_TAB = "//li[contains(@class,'header-menu')]/a[contains(text(),'Test Suites & Cases')]";
+    public static final String TEST_SUITE_PROJECTS_URI = "index.php?/suites/overview/109";
+
 
     public TestSuitePage(WebDriver driver) {
         super(driver);
@@ -75,9 +78,21 @@ public class TestSuitePage extends BasePage {
         return new TestCasePage(driver);
     }
 
-    @Step("Get name section")
-    public String getNameSection() {
-        log.info("Get name section");
-        return driver.findElement(NAME_SECTIONS).getText();
+    @Step("Click add test suite tab")
+    public TestSuitePage clickTestSuiteTab() {
+        driver.findElement(By.xpath(String.format(TEST_SUITES_TAB))).click();
+        return this;
+    }
+
+    @Step("Get validation message text")
+    public String getNumberSection() {
+        log.info("Get validation message text");
+        return driver.findElement(By.xpath(String.format(EDIT_TEST_CASE))).getText();
+    }
+
+    @Step("Opening page")
+    public TestSuitePage openPage() {
+        openPage(BASE_URL + TEST_SUITE_PROJECTS_URI);
+        return this;
     }
 }

@@ -16,11 +16,6 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    //    @Step("Opening a browser via a link 'BASE_URL'")
-//    public LoginPage openPage() {
-//        driver.get(System.getenv().getOrDefault("url", PropertyReader.getProperty("url")));
-//        return this;
-//    }
     @Step("Opening page")
     public LoginPage openPage() {
         openPage(BASE_URL);

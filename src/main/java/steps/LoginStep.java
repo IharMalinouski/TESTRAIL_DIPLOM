@@ -1,7 +1,6 @@
 package steps;
 
 import org.openqa.selenium.WebDriver;
-import utilites.PropertyReader;
 
 public class LoginStep extends BaseStep {
     public LoginStep(WebDriver driver) {

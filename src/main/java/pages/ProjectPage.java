@@ -17,7 +17,6 @@ public class ProjectPage extends BasePage {
         super(driver);
     }
 
-
     @Step("Waiting for an element to load '{LOGIN_BUTTON}'")
     public ProjectPage waitIsAuthorizationPageOpened() {
         waitForElementLocated(RETURN_TO_DASHBOARD_BUTTON, 20);

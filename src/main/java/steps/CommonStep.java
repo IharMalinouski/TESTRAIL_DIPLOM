@@ -13,7 +13,7 @@ public class CommonStep extends BaseStep {
     @Step("logout")
     public void logout() {
         commonPage
-                .openDropDawnLogout()
+                .openDropDownLogout()
                 .clickLogoutButton();
     }
 }

@@ -1,10 +1,9 @@
 package pages;
 
 import io.qameta.allure.Step;
-import modalsWindow.DeleteModal;
+import modals_window.DeleteModal;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilites.PropertyReader;
 
 public class ProjectsPage extends BasePage {
 
@@ -23,8 +22,9 @@ public class ProjectsPage extends BasePage {
         return driver.findElements(By.xpath(PROJECTS_NAME)).get(0).getText();
     }
 
-    public ProjectsPage openProjectsPage() {
-        driver.get(System.getenv().getOrDefault("url", PropertyReader.getProperty("url")) + PROJECTS_URI);
+    @Step("Opening page")
+    public ProjectsPage openPage() {
+        openPage(BASE_URL + PROJECTS_URI);
         return this;
     }
 

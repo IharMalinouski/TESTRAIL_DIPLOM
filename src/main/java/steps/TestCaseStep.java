@@ -9,45 +9,45 @@ public class TestCaseStep extends BaseStep {
     }
 
     @Step("Added new test case")
-    public void addNewTestCase() {
+    public void addNewTestCase(String name, String type, String priority, String estimate, String references, String automationType, String preconditions, String steps, String expectedResult) {
         testCasePage
-                .setTitle("New test case")
-                .setType("Other")
-                .setPriority("Low")
-                .setEstimate("125 hours")
-                .setReferences("1")
-                .setAutomationType("None")
-                .setPreconditions("Added new test suite")
-                .setSteps("Add test suite")
-                .setExpectedResult("Added test case")
+                .setTitle(name)
+                .setType(type)
+                .setPriority(priority)
+                .setEstimate(estimate)
+                .setReferences(references)
+                .setAutomationType(automationType)
+                .setPreconditions(preconditions)
+                .setSteps(steps)
+                .setExpectedResult(expectedResult)
                 .clickButtonAddTestCase();
     }
 
     @Step("Added new test case")
-    public void addTestCase() {
+    public void addTestCase(String name, String type, String priority, String estimate, String references, String automationType, String preconditions, String steps, String expectedResult) {
         testCasePage
-                .setTitle("Update test case")
-                .setType("Other")
-                .setPriority("Low")
-                .setEstimate("125 hours")
-                .setReferences("1")
-                .setAutomationType("None")
-                .setPreconditions("Added new test suite")
-                .setSteps("Add test suite")
-                .setExpectedResult("Added test case")
+                .setTitle(name)
+                .setType(type)
+                .setPriority(priority)
+                .setEstimate(estimate)
+                .setReferences(references)
+                .setAutomationType(automationType)
+                .setPreconditions(preconditions)
+                .setSteps(steps)
+                .setExpectedResult(expectedResult)
                 .clickButtonAddTestCase();
     }
 
     @Step("Added edit test case")
-    public void editTestCase() {
+    public void editTestCase(String name, String estimate, String references, String preconditions, String steps, String expectedResult) {
         testCasePage
                 .editTestCaseButton()
-                .setUpdateTitle("Update test case")
-                .setUpdateEstimate("22 hours")
-                .setUpdateReferences("2")
-                .setUpdatePreconditions("Update new test suite")
-                .setUpdateSteps("Update test suite")
-                .setUpdateExpectedResult("Update test case")
+                .setUpdateTitle(name)
+                .setUpdateEstimate(estimate)
+                .setUpdateReferences(references)
+                .setUpdatePreconditions(preconditions)
+                .setUpdateSteps(steps)
+                .setUpdateExpectedResult(expectedResult)
                 .clickButtonAddTestCase();
     }
 }

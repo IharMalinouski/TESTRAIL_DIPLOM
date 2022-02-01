@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" name="Smoke test suite" parallel="classes">
+<suite thread-count="3" name="Smoke test suite" parallel="methods">
     <test name="TestRailTests">
         <groups>
             <run>
-                <include name="Smoke2"/>
+                <include name="Smoke"/>
             </run>
         </groups>
     </test>

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public abstract class BasePage {
 
     public WebDriver driver;
-    public static final String BASE_URL = "https://malinouski.testrail.io/";
+    public static final String BASE_URL = "https://diplommalinouski.testrail.io//";
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

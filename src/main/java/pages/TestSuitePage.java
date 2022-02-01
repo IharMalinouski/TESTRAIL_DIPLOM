@@ -16,7 +16,7 @@ public class TestSuitePage extends BasePage {
     public static final String NAME_TEST_SUITE = "//div[contains(@class,'content-header-title')]";
     public static final By ADD_SECTION = By.id("addSectionInline");
     public static final By ADD_TEST_CASE = By.id("sidebar-cases-add");
-    public static final String EDIT_TEST_CASE = "//div[contains(@class, 'summary-description')]";
+    public static final String EDIT_TEST_CASE = "//div[contains(@class,'chart-legend-name text-ppp')]/a";
     public static final String TEST_SUITES_TAB = "//li[contains(@class,'header-menu')]/a[contains(text(),'Test Suites & Cases')]";
     public static final String TEST_SUITE_PROJECTS_URI = "index.php?/suites/overview/109";
 
@@ -90,7 +90,7 @@ public class TestSuitePage extends BasePage {
         return driver.findElement(By.xpath(String.format(EDIT_TEST_CASE))).getText();
     }
 
-    @Step("Opening page")
+    @Step("Opening Test Suite page")
     public TestSuitePage openPage() {
         openPage(BASE_URL + TEST_SUITE_PROJECTS_URI);
         return this;

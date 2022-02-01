@@ -95,9 +95,9 @@ public class BaseTest {
 
     @AfterMethod
     public void close() {
-        log.info("Close browser");
-        if (driver != null) {
-            driver.quit();
-        }
+//        log.info("Close browser");
+//        if (driver != null) {
+//            driver.quit();
+//        }
     }
 }
